@@ -28,7 +28,7 @@ export default function HeroSection() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
         >
           <Sparkles className="w-4 h-4 text-[#06B6D4]" />
-          <span className="text-sm text-[#94A3B8]">Building the Future of Digital</span>
+          <span className="text-sm text-[#94A3B8]">Construire l'Avenir du Digital</span>
         </motion.div>
 
         <motion.h1
@@ -37,10 +37,10 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-tight text-balance"
         >
-          <span className="text-[#E2E8F0]">We Build </span>
-          <span className="text-gradient">Powerful</span>
+          <span className="text-[#E2E8F0]">Nous Construisons </span>
+          <span className="text-gradient">des Solutions</span>
           <br />
-          <span className="text-[#E2E8F0]">Digital Solutions</span>
+          <span className="text-[#E2E8F0]">Digitales Puissantes</span>
         </motion.h1>
 
         <motion.p
@@ -63,14 +63,14 @@ export default function HeroSection() {
             href="#contact"
             className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-lg bg-gradient-to-r from-[#2563EB] to-[#7C3AED] text-[#FFFFFF] font-medium hover:shadow-xl hover:shadow-[#2563EB]/20 transition-all"
           >
-            Start Your Project
+            Lancer mon projet
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
             href="#projects"
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg glass text-[#E2E8F0] font-medium hover:bg-[#1E293B]/80 transition-all"
           >
-            View Our Work
+            Voir les projets en action
           </a>
         </motion.div>
 
@@ -82,7 +82,9 @@ export default function HeroSection() {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
-            { value: "50+", label: "Projects Delivered" },
+            { value: "30+", label: "Projets livrés" },
+            { value: "99.9%", label: "Disponibilité moyenne" },
+            { value: "95/100", label: "Score Core Web Vitals" },
             { value: "30+", label: "Happy Clients" },
             { value: "5+", label: "Years Experience" },
             { value: "99%", label: "Client Satisfaction" },

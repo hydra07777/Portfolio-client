@@ -11,42 +11,42 @@ const projects = [
     category: "Web Application",
     description: "A full-featured e-commerce platform with real-time inventory management, payment integration, and analytics dashboard.",
     tech: ["React", "Node.js", "MySQL", "Stripe"],
-    color: "#2563EB",
+    color: "#EC4899",
   },
   {
     title: "Healthcare Dashboard",
     category: "Web Application",
     description: "An intuitive healthcare management dashboard for patient tracking, appointments, and medical records.",
     tech: ["Next.js", "Spring Boot", "PostgreSQL"],
-    color: "#7C3AED",
+    color: "#F59E0B",
   },
   {
     title: "FinTech Mobile App",
     category: "Mobile Application",
     description: "A secure banking application with real-time transactions, biometric authentication, and financial insights.",
     tech: ["React Native", "Java", "MySQL"],
-    color: "#06B6D4",
+    color: "#10B981",
   },
   {
     title: "DevAgency Manager",
     category: "SaaS Platform",
     description: "Our flagship project management tool designed for agencies to streamline workflows and client communication.",
     tech: ["Next.js", "Node.js", "MongoDB", "WebSocket"],
-    color: "#2563EB",
+    color: "#EC4899",
   },
   {
     title: "Real Estate Portal",
     category: "Web Application",
     description: "A modern real estate platform with virtual tours, advanced search filters, and AI-powered recommendations.",
     tech: ["React", "Spring Boot", "MySQL"],
-    color: "#7C3AED",
+    color: "#F59E0B",
   },
   {
     title: "Education Platform",
     category: "Web Application",
     description: "An interactive learning management system with video streaming, live classes, and progress tracking.",
     tech: ["Next.js", "Node.js", "PostgreSQL"],
-    color: "#06B6D4",
+    color: "#10B981",
   },
 ]
 
@@ -148,7 +148,7 @@ export default function ProjectsSection() {
     <SectionWrapper id="projects">
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center mb-16">
-          <span className="inline-block text-sm font-medium text-[#06B6D4] tracking-wide uppercase mb-4">
+          <span className="inline-block text-sm font-medium text-[#10B981] tracking-wide uppercase mb-4">
             Our Projects
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-[#E2E8F0] text-balance">
@@ -169,7 +169,7 @@ export default function ProjectsSection() {
         <div className="mt-12 text-center">
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 text-[#2563EB] hover:text-[#06B6D4] transition-colors font-medium"
+            className="inline-flex items-center gap-2 text-[#EC4899] hover:text-[#10B981] transition-colors font-medium"
           >
             <ExternalLink className="w-4 h-4" />
             Want to see more? Let{"'"}s talk about your project

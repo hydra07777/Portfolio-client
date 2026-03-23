@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, Code2 } from "lucide-react"
 
 const navLinks = [
-  { label: "About", href: "#about" },
+  { label: "À propos", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Projects", href: "#projects" },
+  { label: "Projets", href: "#projects" },
   { label: "Technologies", href: "#technologies" },
-  { label: "Process", href: "#process" },
+  { label: "Processus", href: "#process" },
   { label: "Contact", href: "#contact" },
 ]
 
@@ -42,7 +42,7 @@ export default function Navbar() {
             <Code2 className="w-5 h-5 text-[#FFFFFF]" />
           </div>
           <span className="font-sans font-bold text-lg text-[#E2E8F0]">
-            Dev<span className="text-gradient">Agency</span>
+            ArcaneCore<span className="text-gradient"></span>
           </span>
         </a>
 
@@ -63,13 +63,13 @@ export default function Navbar() {
           href="#contact"
           className="hidden md:inline-flex px-5 py-2 rounded-lg bg-gradient-to-r from-[#2563EB] to-[#7C3AED] text-sm font-medium text-[#FFFFFF] hover:shadow-lg hover:shadow-[#2563EB]/30 transition-all"
         >
-          Get Started
+          Commencer
         </a>
 
         <button
           className="md:hidden text-[#E2E8F0]"
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
         >
           {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -96,7 +96,7 @@ export default function Navbar() {
               ))}
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-gradient-to-r from-[#2563EB] to-[#7C3AED] text-sm font-medium text-[#FFFFFF]"
+                className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-gradient-to-r from-[#EC4899] to-[#F59E0B] text-sm font-medium text-[#FFFFFF]"
                 onClick={() => setMobileOpen(false)}
               >
                 Get Started

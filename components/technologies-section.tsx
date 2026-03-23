@@ -3,6 +3,7 @@
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import SectionWrapper from "./section-wrapper"
+import { useDeviceType } from "@/hooks/useDeviceType"
 
 const technologies = [
   { name: "React", color: "#61DAFB" },
@@ -40,13 +41,13 @@ function TechCard({
         boxShadow: `0 0 0 rgba(0, 0, 0, 0)`,
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = `0 0 25px ${tech.color}15, 0 0 50px ${tech.color}08`
+        e.currentTarget.style.boxShadow = `0 0 50px ${tech.color}15, 0 0 50px ${tech.color}08`
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.boxShadow = `0 0 0 rgba(0, 0, 0, 0)`
       }}
     >
-      {/* Tech icon placeholder: stylized letter */}
+      {/* Tech icon placeholder:   stylized letter */}
       <div
         className="w-14 h-14 rounded-xl flex items-center justify-center text-xl font-bold transition-transform duration-300 group-hover:scale-110"
         style={{
@@ -57,7 +58,7 @@ function TechCard({
       >
         {tech.name.charAt(0)}
       </div>
-      <span className="text-sm font-medium text-[#94A3B8] group-hover:text-[#E2E8F0] transition-colors">
+      <span className="font-medium text-[#94A3B8] group-hover:text-[#E2E8F0] transition-colors" style={{ fontSize: window.innerWidth < 768 ? '0.75rem' : '0.875rem' }}>
         {tech.name}
       </span>
     </motion.div>
@@ -65,23 +66,23 @@ function TechCard({
 }
 
 export default function TechnologiesSection() {
+  const { isMobile, isTablet } = useDeviceType()
   return (
     <SectionWrapper id="technologies">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="text-center mb-16">
-          <span className="inline-block text-sm font-medium text-[#06B6D4] tracking-wide uppercase mb-4">
-            Tech Stack
+      <div className="mx-auto max-w-7xl" style={{ padding: isMobile ? '0 1.5rem' : isTablet ? '0 2rem' : '0 3rem' }}>
+        <div className="text-center" style={{ marginBottom: isMobile ? '2rem' : '4rem' }}>
+          <span className="inline-block font-medium text-[#06B6D4] tracking-wide uppercase" style={{ fontSize: isMobile ? '0.75rem' : '0.875rem', marginBottom: '1rem' }}>
+            Stack Technologique
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#E2E8F0] text-balance">
-            Technologies We Use
+          <h2 className="font-bold text-[#E2E8F0] text-balance" style={{ fontSize: isMobile ? '1.875rem' : isTablet ? '2.25rem' : '3rem', marginBottom: isMobile ? '1rem' : '1rem' }}>
+            Technologies Que Nous Utilisons
           </h2>
-          <p className="mt-4 text-[#94A3B8] max-w-2xl mx-auto leading-relaxed text-pretty">
-            We leverage the latest and most reliable technologies to build scalable,
-            performant, and maintainable solutions.
+          <p className="text-[#94A3B8] max-w-2xl mx-auto leading-relaxed text-pretty" style={{ marginTop: isMobile ? '1rem' : '1rem', fontSize: isMobile ? '0.9rem' : '1rem' }}>
+            Nous exploitons les technologies les plus fiables et les plus récentes pour construire des solutions évolutives, performantes et maintenables.
           </p>
         </div>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4">
+        <div className="gap-4" style={{ display: 'grid', gridTemplateColumns: isMobile ? 'repeat(3, 1fr)' : isTablet ? 'repeat(4, 1fr)' : 'repeat(6, 1fr)' }}>
           {technologies.map((tech, i) => (
             <TechCard key={tech.name} tech={tech} index={i} />
           ))}
@@ -89,10 +90,10 @@ export default function TechnologiesSection() {
 
         {/* Orbiting animation visual */}
         <div className="mt-20 flex justify-center">
-          <div className="relative w-64 h-64 md:w-80 md:h-80">
+          <div className="relative" style={{ width: isMobile ? '12rem' : isTablet ? '14rem' : '16rem', height: isMobile ? '12rem' : isTablet ? '14rem' : '16rem' }}>
             {/* Center */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-[#2563EB] to-[#7C3AED] flex items-center justify-center glow-blue z-10">
-              <span className="text-[#FFFFFF] font-bold text-xs">DEV</span>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-[#2563EB] to-[#7C3AED] flex items-center justify-center glow-blue z-10" style={{ width: isMobile ? '2rem' : '3rem', height: isMobile ? '2rem' : '3rem' }}>
+              <span className="text-[#FFFFFF] font-bold" style={{ fontSize: isMobile ? '0.625rem' : '0.75rem' }}>DEV</span>
             </div>
 
             {/* Orbit ring 1 */}

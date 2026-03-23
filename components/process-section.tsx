@@ -4,33 +4,34 @@ import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { Search, PenTool, Code, Rocket } from "lucide-react"
 import SectionWrapper from "./section-wrapper"
+import { useDeviceType } from "@/hooks/useDeviceType"
 
 const steps = [
   {
     icon: Search,
-    title: "Analysis",
-    description: "We dive deep into understanding your business requirements, target audience, and project goals.",
+    title: "Analyse",
+    description: "Nous approfondissons notre compréhension de vos besoins métier, de votre public cible et de vos objectifs de projet.",
     color: "#2563EB",
     step: "01",
   },
   {
     icon: PenTool,
     title: "Design",
-    description: "Our designers create stunning mockups and prototypes that align with your brand and user needs.",
+    description: "Nos designers créent des maquettes et prototypes magnifiques qui s'alignent avec votre marque et les besoins des utilisateurs.",
     color: "#7C3AED",
     step: "02",
   },
   {
     icon: Code,
-    title: "Development",
-    description: "Our engineers bring the designs to life with clean, efficient, and scalable code.",
+    title: "Développement",
+    description: "Nos ingénieurs donnent vie aux designs avec un code propre, efficace et évolutif.",
     color: "#06B6D4",
     step: "03",
   },
   {
     icon: Rocket,
-    title: "Delivery",
-    description: "We deploy, test, and optimize your project, ensuring a flawless launch and ongoing support.",
+    title: "Livraison",
+    description: "Nous déployons, testons et optimisons votre projet pour assurer un lancement impeccable et un support continu.",
     color: "#2563EB",
     step: "04",
   },
@@ -69,60 +70,60 @@ function ProcessStep({
         </div>
         {!isLast && (
           <div
-            className="w-0.5 h-20 mt-2"
+            className="w-0.5 mt-2"
             style={{
               background: `linear-gradient(to bottom, ${step.color}40, transparent)`,
+              height: window.innerWidth < 768 ? '3rem' : '5rem',
             }}
           />
         )}
       </div>
 
       {/* Content */}
-      <div className="pt-2 pb-8">
+      <div className="pt-2" style={{ paddingBottom: window.innerWidth < 768 ? '1rem' : '2rem' }}>
         <div className="flex items-center gap-3 mb-2">
           <span
-            className="text-xs font-mono font-bold"
-            style={{ color: step.color }}
+            className="font-mono font-bold"
+            style={{ color: step.color, fontSize: window.innerWidth < 768 ? '0.625rem' : '0.75rem' }}
           >
-            STEP {step.step}
+            ÉTAPE {step.step}
           </span>
         </div>
-        <h3 className="text-xl font-bold text-[#E2E8F0] mb-2">{step.title}</h3>
-        <p className="text-[#94A3B8] leading-relaxed max-w-md text-pretty">{step.description}</p>
+        <h3 className="font-bold text-[#E2E8F0] mb-2" style={{ fontSize: window.innerWidth < 768 ? '1.05rem' : '1.25rem' }}>{step.title}</h3>
+        <p className="text-[#94A3B8] leading-relaxed max-w-md text-pretty" style={{ fontSize: window.innerWidth < 768 ? '0.875rem' : '1rem' }}>{step.description}</p>
       </div>
     </motion.div>
   )
 }
 
 export default function ProcessSection() {
+  const { isMobile, isTablet } = useDeviceType()
   return (
     <SectionWrapper id="process">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl" style={{ padding: isMobile ? '0 1.5rem' : isTablet ? '0 2rem' : '0 3rem' }}>
         <div className="grid md:grid-cols-2 gap-16 items-start">
           <div>
-            <span className="inline-block text-sm font-medium text-[#06B6D4] tracking-wide uppercase mb-4">
-              Our Process
+            <span className="inline-block font-medium text-[#06B6D4] tracking-wide uppercase" style={{ fontSize: isMobile ? '0.75rem' : '0.875rem', marginBottom: '1rem' }}>
+              Notre Processus
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#E2E8F0] text-balance">
-              How We Work
+            <h2 className="font-bold text-[#E2E8F0] text-balance" style={{ fontSize: isMobile ? '1.875rem' : isTablet ? '2.25rem' : '3rem', marginBottom: isMobile ? '1rem' : '1rem' }}>
+              Comment Nous Travaillons
             </h2>
-            <p className="mt-4 text-[#94A3B8] leading-relaxed text-pretty">
-              Our proven four-step process ensures every project is delivered on time,
-              within budget, and exceeding expectations. We keep you involved at every
-              stage for complete transparency.
+            <p className="text-[#94A3B8] leading-relaxed text-pretty" style={{ marginTop: isMobile ? '1rem' : '1rem', fontSize: isMobile ? '0.9rem' : '1rem' }}>
+              Notre processus éprouvé en quatre étapes garantit que chaque projet est livré à temps, dans le budget, et dépassant les attentes. Nous vous impliquez à chaque étape pour une transparence complète.
             </p>
 
             {/* Mini stats */}
-            <div className="mt-10 grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-6" style={{ marginTop: isMobile ? '1.5rem' : '2.5rem' }}>
               {[
-                { value: "100%", label: "On-Time Delivery" },
-                { value: "4 Steps", label: "Clear Process" },
-                { value: "24/7", label: "Support Available" },
-                { value: "Agile", label: "Methodology" },
+                { value: "100%", label: "Livraison Ponctuelle" },
+                { value: "4 Étapes", label: "Processus Clair" },
+                { value: "24/7", label: "Support Disponible" },
+                { value: "Agile", label: "Méthodologie" },
               ].map((stat) => (
-                <div key={stat.label} className="glass rounded-xl p-4">
-                  <div className="text-lg font-bold text-gradient">{stat.value}</div>
-                  <div className="text-xs text-[#94A3B8] mt-1">{stat.label}</div>
+                <div key={stat.label} className="glass rounded-xl" style={{ padding: isMobile ? '1rem' : '1rem' }}>
+                  <div className="font-bold text-gradient" style={{ fontSize: isMobile ? '1.05rem' : '1.125rem' }}>{stat.value}</div>
+                  <div className="text-[#94A3B8] mt-1" style={{ fontSize: isMobile ? '0.7rem' : '0.75rem' }}>{stat.label}</div>
                 </div>
               ))}
             </div>

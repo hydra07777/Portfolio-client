@@ -47,7 +47,7 @@ function TechCard({
         e.currentTarget.style.boxShadow = `0 0 0 rgba(0, 0, 0, 0)`
       }}
     >
-      {/* Tech icon placeholder: stylized letter */}
+      {/* Tech icon placeholder:   stylized letter */}
       <div
         className="w-14 h-14 rounded-xl flex items-center justify-center text-xl font-bold transition-transform duration-300 group-hover:scale-110"
         style={{

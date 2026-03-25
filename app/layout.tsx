@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '../components/theme-provider'
+import { Toaster } from 'sonner'
 import './globals.css'
 
 /* ---------------- FONTS ---------------- */
@@ -73,11 +74,11 @@ export default function RootLayout({
     >
       <body className="font-sans antialiased bg-[#0F172A] text-[#E2E8F0] overflow-x-hidden">
         
-        {/* Theme Provider GLOBAL (fix hydration) */}
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
         </ThemeProvider>
 
+        <Toaster theme="dark" position="bottom-right" richColors />
         <Analytics />
       </body>
     </html>

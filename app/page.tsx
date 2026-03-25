@@ -33,7 +33,7 @@ export default function Home() {
     console.log('Form submitted:', formData);
     setFormSubmitted(true);
     setTimeout(() => setFormSubmitted(false), 3000);
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
   // Icônes SVG pour les réseaux sociaux
@@ -389,14 +389,14 @@ export default function Home() {
             <a href="#" style={{ color: '#ddd', textDecoration: 'none', fontSize: '0.95rem', whiteSpace: 'nowrap' }}>
               Fonctionnalités
             </a>
-            <a href="#" style={{ color: '#ddd', textDecoration: 'none', fontSize: '0.95rem', whiteSpace: 'nowrap' }}>
-              Tarifs
+            <a href="#about" style={{ color: '#ddd', textDecoration: 'none', fontSize: '0.95rem', whiteSpace: 'nowrap' }}>
+              A propos
             </a>
-            <a href="#" style={{ color: '#ddd', textDecoration: 'none', fontSize: '0.95rem', whiteSpace: 'nowrap' }}>
-              Docs
+            <a href="#stack" style={{ color: '#ddd', textDecoration: 'none', fontSize: '0.95rem', whiteSpace: 'nowrap' }}>
+              Stacks
             </a>
-            <a href="#" style={{ color: '#ddd', textDecoration: 'none', fontSize: '0.95rem', whiteSpace: 'nowrap' }}>
-              Blog
+            <a href="#contact" style={{ color: '#ddd', textDecoration: 'none', fontSize: '0.95rem', whiteSpace: 'nowrap' }}>
+              Contact
             </a>
           </div>
           <div
@@ -408,7 +408,7 @@ export default function Home() {
             }}
           >
             <a
-              href="#"
+              href="/commencer"
               className="btn-primary glow"
               style={{ padding: isMobile ? '0.36rem 0.8rem' : '0.45rem 1rem', fontSize: isMobile ? '0.85rem' : '0.95rem' }}
             >
@@ -438,18 +438,18 @@ export default function Home() {
           {isMobile && menuOpen && (
             <div style={{ width: '100%', background: 'linear-gradient(180deg, rgba(11,15,25,0.95), rgba(11,15,25,0.9))', padding: '0.8rem 1rem', boxShadow: '0 8px 30px rgba(0,0,0,0.6)' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                {['Fonctionnalités', 'Tarifs', 'Docs', 'Blog'].map((label) => (
+                {[{ a: 'A propos', b :  '#about'}, { a: 'Stacks', b : '#stack'}, { a: 'Contact', b : '#contact'}].map((label, id) => (
                   <a
-                    key={label}
-                    href="#"
+                    key={id}
+                    href={label.b}
                     onClick={() => setMenuOpen(false)}
                     style={{ color: '#cbd5e1', padding: '0.6rem 0.8rem', borderRadius: '8px', textDecoration: 'none' }}
                   >
-                    {label}
+                    {label.a}
                   </a>
                 ))}
                 <a
-                  href="#"
+                  href="/commencer"
                   onClick={() => setMenuOpen(false)}
                   className="btn-primary glow"
                   style={{ padding: '0.7rem 0.8rem', width: '100%', textAlign: 'center' }}
@@ -526,24 +526,24 @@ export default function Home() {
             </div>
             <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', flexDirection: isMobile ? 'column' : 'row', width: isMobile ? '100%' : 'auto' }}>
               <a
-                href="#"
+                href="/commencer"
                 className="btn-primary glow"
                 style={{ padding: isMobile ? '0.9rem 1rem' : '1rem 2.8rem', fontSize: isMobile ? '1rem' : '1.2rem', textDecoration: 'none', width: isMobile ? '100%' : 'auto', textAlign: 'center' }}
               >
                 Commencer →
               </a>
-              <a
+              {/* <a
                 href="#"
                 className="btn-outline"
                 style={{ padding: isMobile ? '0.9rem 1rem' : '1rem 2.5rem', fontSize: isMobile ? '1rem' : '1.2rem', textDecoration: 'none', width: isMobile ? '100%' : 'auto', textAlign: 'center', marginTop: isMobile ? '0.6rem' : '0' }}
               >
                 Voir la démo
-              </a>
+              </a> */}
             </div>
             </div>
 
           {/* À propos - Mission / Vision / Approche */}
-          <div
+          <div id='#about'
             style={{
               maxWidth: '1200px',
               margin: isMobile ? '4rem auto 0' : isTablet ? '5rem auto 0' : '8rem auto 0',
@@ -709,7 +709,7 @@ export default function Home() {
             <ServicesSection />
           </div>
 
-          <div style={{ maxWidth: '1200px', margin: isMobile ? '3rem auto 0' : isTablet ? '4rem auto 0' : '6rem auto 0', padding: isMobile ? '0 1.5rem' : isTablet ? '0 2rem' : '0 3rem' }}>
+          <div id='#stack' style={{ maxWidth: '1200px', margin: isMobile ? '3rem auto 0' : isTablet ? '4rem auto 0' : '6rem auto 0', padding: isMobile ? '0 1.5rem' : isTablet ? '0 2rem' : '0 3rem' }}>
             <TechnologiesSection />
           </div>
 
@@ -730,24 +730,24 @@ export default function Home() {
           >
             {[
               {
-                icon: '⚡',
-                title: 'Déploiements instantanés',
-                desc: 'Git push et c\'est en ligne. Rollbacks automatiques, prévisualisations pour chaque branche.',
-              },
-              {
-                icon: '📈',
-                title: 'Scalabilité intelligente',
-                desc: 'Infrastructure auto-scalable gérée par ML. De 0 à 1 million d\'utilisateurs sans effort.',
-              },
-              {
-                icon: '🔒',
-                title: 'Sécurité renforcée',
-                desc: 'Chiffrement de bout en bout, DDoS protection, et audits automatisés intégrés.',
-              },
-              {
                 icon: '🌐',
-                title: 'Edge par défaut',
-                desc: 'Contenu distribué sur 300+ points de présence. Latence minimale, partout.',
+                title: 'Ingénierie Web Sur-Mesure',
+                desc: 'Des expériences numériques immersives, sculptées pour la vitesse et conçues pour subjuguer vos utilisateurs dès la première seconde.',
+              },
+              {
+                icon: '📱',
+                title: 'Applications Mobiles Natives',
+                desc: 'Des écosystèmes fluides, réactifs et puissants dans la poche de vos clients. L\'excellence de bout en bout sur iOS et Android.',
+              },
+              {
+                icon: '⚡',
+                title: 'Performance & Scalabilité',
+                desc: 'Infrastructures de pointe taillées pour des millions de requêtes. Encaissez des pics de trafic massifs sans la moindre friction.',
+              },
+              {
+                icon: '🎨',
+                title: 'Design UI/UX Avant-Gardiste',
+                desc: 'Une esthétique radicale et professionnelle. Nous fusionnons l\'art et la technique pour forger des interfaces mémorables et captivantes.',
               },
             ].map((feature, index) => (
               <div
@@ -758,12 +758,18 @@ export default function Home() {
                   transform: 'translateY(30px)',
                   opacity: 0,
                   animation: `fadeUp 0.8s forwards ${index * 0.1}s`,
+                  borderColor: 'rgba(107, 140, 255, 0.1)',
+                  background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.1))'
                 }}
               >
-                <div className="inline-block text-sm font-medium text-[#06B6D4] tracking-wide uppercase mb-4">Nos Services</div>
-                <h3 className="text-2xl md:text-3xl font-bold text-[#E2E8F0] mb-4">Déploiements instantanés</h3>
-                <p className="text-[#94A3B8]">Git push et c'est en ligne. Rollbacks automatiques, prévisualisations pour chaque branche.</p>
-                <p style={{ color: '#b0b8cc', lineHeight: 1.6, fontSize: '1.1rem' }}>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="text-4xl mb-6 transform group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-500">
+                  {feature.icon}
+                </div>
+                <h3 className="text-2xl font-bold text-[#E2E8F0] mb-4 group-hover:text-blue-300 transition-colors duration-300">
+                  {feature.title}
+                </h3>
+                <p style={{ color: '#94A3B8', lineHeight: 1.6, fontSize: '1.05rem', position: 'relative', zIndex: 1 }}>
                   {feature.desc}
                 </p>
               </div>
@@ -1000,7 +1006,7 @@ export default function Home() {
             </div>
 
             {/* Colonne 4 : Contact Form */}
-            <div style={{ gridColumn: 'span 1' }}>
+            <div id='#contact' style={{ gridColumn: 'span 1' }}>
               <h4 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1.5rem', color: '#fff' }}>
                 Contact Us
               </h4>

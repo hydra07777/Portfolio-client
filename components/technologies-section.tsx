@@ -6,18 +6,18 @@ import SectionWrapper from "./section-wrapper"
 import { useDeviceType } from "@/hooks/useDeviceType"
 
 const technologies = [
-  { name: "React", color: "#61DAFB" },
-  { name: "Next.js", color: "#E2E8F0" },
-  { name: "Node.js", color: "#68A063" },
-  { name: "Java", color: "#ED8B00" },
-  { name: "Spring Boot", color: "#6DB33F" },
-  { name: "MySQL", color: "#00758F" },
-  { name: "TypeScript", color: "#3178C6" },
-  { name: "Tailwind CSS", color: "#06B6D4" },
-  { name: "MongoDB", color: "#47A248" },
-  { name: "PostgreSQL", color: "#336791" },
-  { name: "Docker", color: "#2496ED" },
-  { name: "Git", color: "#F05032" },
+  { name: "React", slug: "react", color: "#61DAFB" },
+  { name: "Next.js", slug: "nextdotjs", color: "#ffffff" },
+  { name: "Node.js", slug: "nodedotjs", color: "#68A063" },
+  { name: "Java", slug: "java", color: "#ED8B00" },
+  { name: "Spring Boot", slug: "springboot", color: "#6DB33F" },
+  { name: "MySQL", slug: "mysql", color: "#4479A1" },
+  { name: "TypeScript", slug: "typescript", color: "#3178C6" },
+  { name: "Tailwind CSS", slug: "tailwindcss", color: "#06B6D4" },
+  { name: "MongoDB", slug: "mongodb", color: "#47A248" },
+  { name: "PostgreSQL", slug: "postgresql", color: "#4169E1" },
+  { name: "Docker", slug: "docker", color: "#2496ED" },
+  { name: "Git", slug: "git", color: "#F05032" },
 ]
 
 function TechCard({
@@ -47,16 +47,19 @@ function TechCard({
         e.currentTarget.style.boxShadow = `0 0 0 rgba(0, 0, 0, 0)`
       }}
     >
-      {/* Tech icon placeholder:   stylized letter */}
       <div
-        className="w-14 h-14 rounded-xl flex items-center justify-center text-xl font-bold transition-transform duration-300 group-hover:scale-110"
+        className="w-11 h-11 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 p-3"
         style={{
-          background: `${tech.color}15`,
-          color: tech.color,
+          background: `${tech.color}10`,
           border: `1px solid ${tech.color}30`,
         }}
       >
-        {tech.name.charAt(0)}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img 
+          src={`https://cdn.simpleicons.org/${tech.slug}/${tech.color.replace('#', '')}`} 
+          alt={`${tech.name} logo`} 
+          className="w-full h-full object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.1)] transition-all"
+        />
       </div>
       <span className="font-medium text-[#94A3B8] group-hover:text-[#E2E8F0] transition-colors" style={{ fontSize: window.innerWidth < 768 ? '0.75rem' : '0.875rem' }}>
         {tech.name}
